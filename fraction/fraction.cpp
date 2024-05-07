@@ -61,7 +61,7 @@ Fraction *difference(Fraction *f1, Fraction *f2)
 	int commonDenominator = lcm(f1->denominator, f2->denominator);
 	
 	int operand1 = (commonDenominator / f1->denominator) * f1->numerator;
-	int operand2 = (commonDenominator / f2->denominator) * f2->denominator;
+	int operand2 = (commonDenominator / f2->denominator) * f2->numerator;
 	int difference = operand1 - operand2;
 	return new Fraction(difference, commonDenominator);
 }

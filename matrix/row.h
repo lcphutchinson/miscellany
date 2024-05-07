@@ -6,7 +6,7 @@
  * Object Implementation of a single matrix row, or horizontal vector.
  *
  * The Row is the site of several important Matrix operations, and building a Matrix
- * from Rows allows for a safer memory structure, as well as a more reader-friendly organization of methods..
+ * from Rows allows for a safer memory structure, as well as a more reader-friendly organization of methods.
  */
 class Row
 {
@@ -86,3 +86,13 @@ Row *getScaledRow(Row *r, Fraction *n);
  *
  */
 Row *getRowSum(Row *r1, Row *r2);
+
+/**
+ * Create a new Row from the differences of aligned values of two input Rows
+ *
+ * @params r1 First row for subtraction
+ * @params r2 Second row for subtraction
+ * @return a new Row with each value equal to r1[i] - r2[i]
+ *
+ */
+Row *getRowDiff(Row *r1, Row *r2);

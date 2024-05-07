@@ -11,10 +11,20 @@ class Matrix
 		 *
 		 * @param m Collumn count for this Matrix
 		 * @param n Row count for this Matrix
-		 * @param in_rows Row Reference Array for data input. 
+		 * @param in_data Fraction Reference Array for data input. 
 		 *
 		 */
 		Matrix(int m, int n, Fraction *in_data[]);
+
+		/**
+		 * Shortcut Constructor for Matrices from pre-constructed Rows
+		 *
+		 * @param m Collumn count for this Matrix
+		 * @param n Row count for this Matrix
+		 * @param in_rows Row Reference Array for data input
+		 *
+		 */
+		Matrix(int m, int n, Row *in_rows[]);
 
 		/**
 		 * Shortcut Constructor for Matrices from console input.
@@ -71,7 +81,7 @@ class Matrix
 		 * @param s Scalar to apply, passed in a Fraction
 		 *
 		 */
-		void scaleRow(int r, int s);
+		void scaleRow(int r, Fraction *s);
 
 	private:
 		// Matrix dimensions
@@ -111,7 +121,7 @@ Matrix *difMatrix(Matrix *m1, Matrix *m2);
 /**
  * Produces a new Matrix representing the product of two input Matrices.
  *
- * Input Matrices must have complementary M and N values (M1 = N2, M2 = N1) to be multiplied.
+ * To be multiplied, the M value (cols) of Matrix m1 must equal the N value (rows) of m2.
  *
  * @param m1 First Matrix operand
  * @param m2 Second Matrix operand
